@@ -6,6 +6,7 @@ from mutagen.easyid3 import EasyID3
 
 
 def getPath():
+    print("No path file detected. Enter music path below.")
     path = input('Path: ')
     with open('constants.py', 'w') as file:
         file.write("PATH = r'" + path + "'")
@@ -14,7 +15,6 @@ def getPath():
 try:
     import constants
 except ImportError:
-    print("No path file detected. Enter music path below.")
     getPath()
     import constants
 
